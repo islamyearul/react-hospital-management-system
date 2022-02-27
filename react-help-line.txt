@@ -1,2 +1,11 @@
 style={{ backgroundImage: `url('${process.env.PUBLIC_URL}/img/bg/5.jpg')` }}
 =================
+Date:
+{new Date().toLocaleString() + ''}   //full
+{new Date().getFullYear()}    //year
+{new Date().toLocaleString("en-US", { day : '2-digit'})}    //day
+{new Date().toLocaleString("en-US", { month: "long" })}   //Month
+{new Date().toLocaleString("locale", { weekday: 'long' })}   //Day Name
+
+  var today = new Date(),
+   time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();

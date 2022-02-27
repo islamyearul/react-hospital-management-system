@@ -10,7 +10,7 @@ class Nav extends Component {
             <div className="row">
                 <div className="col-md-8 col-sm-6 welcome-top">
                     <ul className="list-inline top-icon">
-                        <li><i className="fa fa-envelope"></i> yearulislamonem@gamil.com</li>
+                        <li><i className="fa fa-envelope"></i> yearulislamonem@gmail.com</li>
                         <li><i className="fa fa-clock-o"></i> Mon - Sat 8.00 - 18.00</li>
                     </ul>
                 </div>

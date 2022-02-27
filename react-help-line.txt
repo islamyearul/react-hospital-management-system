@@ -1,0 +1,2 @@
+style={{ backgroundImage: `url('${process.env.PUBLIC_URL}/img/bg/5.jpg')` }}
+=================

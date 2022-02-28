@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
+import { FaFacebookF, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 class Nav extends Component {
-
+     openInNewTab = (url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+      }
  
     render() {
+
 
         return (
             <>
@@ -19,11 +24,16 @@ class Nav extends Component {
                 </div>
                 <div className="col-md-4 col-sm-6">
                     <ul className="list-inline text-right icon-style-1">
-                        <li className=" hvr-rectangle-out"><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li className=" hvr-rectangle-out"><a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <li className=" hvr-rectangle-out"><a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li className=" hvr-rectangle-out"><a href="#"><i className="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                        <li className=" hvr-rectangle-out"><a href="#"><i className="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        <li className=" hvr-rectangle-out"><a href="#" target="_blank" rel="noopener noreferrer" onClick={() => this.openInNewTab('https://twitter.com')}>{<FaTwitter></FaTwitter>}</a>
+                        </li>
+                        <li className=" hvr-rectangle-out"><a href="#" onClick={() => this.openInNewTab('https://linkedin.com')}>{<FaLinkedin></FaLinkedin>}</a>
+                        </li>
+                        <li className=" hvr-rectangle-out"><a href="#" onClick={() => this.openInNewTab('https://facebook.com')}>{<FaFacebookF></FaFacebookF>}</a>
+                        </li>
+                        <li className=" hvr-rectangle-out"><a href="#" onClick={() => this.openInNewTab('https://instagram.com')}>{<FaInstagram></FaInstagram>}</a>
+                        </li>
+                        
+                      
                     </ul>
                 </div>
             </div>
@@ -44,8 +54,8 @@ class Nav extends Component {
                             </button>
                             <a className="navbar-brand dis-none" href="index-2.html"><img src="img/logo-black.png" alt="" />
                                 </a>
-                            <a className="navbar-brand dis-block" href="index-2.html"><img src="img/logo-black.png" alt="" />
-                                </a>
+                            <Link className="navbar-brand dis-block" to={'/'}><img src="img/logo-black.png" alt="" />
+                                </Link>
                         </div>
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-hover="dropdown" data-animations-delay="1.8s" data-animations="fadeInUp">
                             <ul className="nav navbar-nav bg-none navbar-right style-3">
@@ -75,49 +85,16 @@ class Nav extends Component {
                                     </ul>
                                 </li>
                                 <li className="dropdown">
-                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span data-hover="Doctors">Doctors <i className="fa fa-angle-down" aria-hidden="true"></i></span></a>
-                                    <ul className="dropdown-menu">
-                                        <li><a href="team-col-3.html">Doctors style 1</a>
-                                        </li>
-                                        <li><a href="team-col-4.html">Doctors style 2</a>
-                                        </li>
-                                        <li><a href="team-details.html">Doctors details</a>
-                                        </li>
-                                    </ul>
+                                    <Link to='/doctors' className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span data-hover="Doctors">Doctors</span></Link>
+                                    
                                 </li>
                                 <li className="dropdown">
-                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Portfolio">Portfolio <i className="fa fa-angle-down" aria-hidden="true"></i></span></a>
-                                    <ul className="dropdown-menu">
-                                        <li><a href="portfolio-col-3.html">Portfolio 3 columns</a>
-                                        </li>
-                                        <li><a href="portfolio-col-4.html">Portfolio 4 columns</a>
-                                        </li>
-                                        <li><a href="portfolio-width.html">Portfolio Width</a>
-                                        </li>
-                                        <li><a href="portfolio-gutter.html">Portfolio Gutter Less</a>
-                                        </li>
-                                    </ul>
+                                    <Link to='/portfolio' className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Portfolio">Portfolio</span></Link>
+                                   
                                 </li>
                                 <li className="dropdown">
-                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Pages">Pages <i className="fa fa-angle-down" aria-hidden="true"></i></span></a>
-                                    <ul className="dropdown-menu">
-                                        <li><a href="shop-grid.html">Shop Grid</a>
-                                        </li>
-                                        <li><a href="shop-list.html">Shop List</a>
-                                        </li>
-                                        <li><a href="shop-single.html">Shop Single</a>
-                                        </li>
-                                        <li><a href="shop-cart.html">Shop Cart</a>
-                                        </li>
-                                        <li><a href="shop-checkout.html">Shop Checkout</a>
-                                        </li>
-                                        <li><a href="testimonials.html">Testimonials</a>
-                                        </li>
-                                        <li><a href="comming-soon.html">Comming Soon</a>
-                                        </li>
-                                        <li><a href="error.html">Error / 404 page</a>
-                                        </li>
-                                    </ul>
+                                    <Link to={'/about'} className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Pages">About</span></Link>
+                                   
                                 </li>
                                 <li className="dropdown">
                                     <Link to={'/blog'} className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Blog">Blog</span></Link>

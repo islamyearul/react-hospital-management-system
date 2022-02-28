@@ -17,8 +17,6 @@ function App() {
    {/* <!-- Footer Style start --> */}
     <Footer></Footer>
     {/* <!-- Footer Style End --> */}
-
-
 </>
   );
 }

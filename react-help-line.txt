@@ -1,5 +1,17 @@
+Inline style for background Image
+
 style={{ backgroundImage: `url('${process.env.PUBLIC_URL}/img/bg/5.jpg')` }}
-=================
+=======================(Icon)
+npm install react-icons
+========================= (External Link )
+//More Secure Solution. For JS only.
+const openInNewTab = (url) => {
+  const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+  if (newWindow) newWindow.opener = null
+}
+//Then add to your onClick
+onClick={() => openInNewTab('https://stackoverflow.com')}
+===================(Date Formation)
 Date:
 {new Date().toLocaleString() + ''}   //full
 {new Date().getFullYear()}    //year

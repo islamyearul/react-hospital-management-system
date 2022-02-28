@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ProgressBar from '../../../formating/ProgressBar';
+
 
 class Welcome extends Component {
     render() {
@@ -11,7 +13,7 @@ class Welcome extends Component {
                         <div className="col-md-7">
                             <h2>Why chose us</h2>
                             <h3 className="color-defult">Get a world class Health service now</h3>
-                            <p className="lead">Medicative Hospital is here for you. Call <span className="ff-p">+00 999 3030</span></p>
+                            <p className="lead">Medicative Hospital is here for you. Call <span className="ff-p">+88 01825 682260</span></p>
                             <p><span className="fw-b">Consectetur</span> adipisicing elit. Ratione ut culpa, illo, odit tempore dignissimos nisi consequatur voluptatem, eveniet quaerat officiis sed ad et fugiat praesentium nesciunt sunt ipsa quam magnam.</p>
                             <div className="row margin-top-20">
                                 <div className="col-md-6">
@@ -22,33 +24,32 @@ class Welcome extends Component {
                                 </div>
                             </div>
                             <div className="clearfix margin-top-20 margin-right-10"> 
-                                <div className="skills" data-percent="85%">
-                                    <div className="title-bar">
+                                <div className="" >
+                                    <div className="">
                                     <h5>Cardiology</h5>
-                                    </div>
-                                    <span>85%</span>
-                                    <div className="skillbar-1"></div>  
+                                    <ProgressBar bgcolor="#DDDDDD" progress='30'  height={30} /> 
+                                    </div>                                   
                                 </div>
-                                <div className="skills" data-percent="60%">
-                                    <div className="title-bar">
+                                <div className="margin-top-20" >
+                                    <div className="">
                                     <h5>General Practice</h5>
+                                    <ProgressBar bgcolor="#DDDDDD" progress='60'  height={30} /> 
                                     </div>
-                                    <span>60%</span>
-                                    <div className="skillbar-2"></div>  
+                                
                                 </div>
-                                <div className="skills" data-percent="89%">
-                                    <div className="title-bar">
+                                <div className="margin-top-20" >
+                                    <div className="">
                                     <h5>General surgery</h5>
+                                    <ProgressBar bgcolor="#DDDDDD" progress='89'  height={30} /> 
                                     </div>
-                                    <span>89%</span>
-                                    <div className="skillbar-3"></div>  
+                                   
                                 </div>
-                                <div className="skills" data-percent="60%">
-                                    <div className="title-bar">
+                                <div className="margin-top-20" >
+                                    <div className="">
                                     <h5>Pharmacology</h5>
+                                    <ProgressBar bgcolor="#DDDDDD" progress='60'  height={30} /> 
                                     </div>
-                                    <span>60%</span>
-                                    <div className="skillbar-4"></div>  
+                                    
                                 </div>
                             </div>
 
@@ -61,6 +62,7 @@ class Welcome extends Component {
                     </div>
                 </div>
             </div>
+            
             </section> 
             </>
         );

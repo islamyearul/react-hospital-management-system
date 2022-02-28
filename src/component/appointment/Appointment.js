@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
 
-class About extends Component {
+import React, { Component } from 'react';
+import Appointmentsec from '../home/section/Appointmentsec';
+
+
+class Appointment extends Component {
     render() {
         return (
             <>
-                    <div class="preloader"></div>
-
-
 
 {/* <!-- Header navbar end --> */}
 
@@ -41,9 +41,10 @@ class About extends Component {
         </div>
     </div>
 </div>
+<Appointmentsec></Appointmentsec>
             </>
         );
     }
 }
 
-export default About;
+export default Appointment;

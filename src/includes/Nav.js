@@ -31,9 +31,8 @@ class Nav extends Component {
                         <li className=" hvr-rectangle-out"><a href="#" onClick={() => this.openInNewTab('https://facebook.com')}>{<FaFacebookF></FaFacebookF>}</a>
                         </li>
                         <li className=" hvr-rectangle-out"><a href="#" onClick={() => this.openInNewTab('https://instagram.com')}>{<FaInstagram></FaInstagram>}</a>
-                        </li>
-                        
-                      
+                        </li>                      
+                    
                     </ul>
                 </div>
             </div>
@@ -93,7 +92,7 @@ class Nav extends Component {
                                    
                                 </li>
                                 <li className="dropdown">
-                                    <Link to={'/about'} className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Pages">About</span></Link>
+                                    <Link to={'/appointment'} className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Pages">Appointment</span></Link>
                                    
                                 </li>
                                 <li className="dropdown">

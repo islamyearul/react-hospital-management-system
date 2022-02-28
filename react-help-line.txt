@@ -1,6 +1,7 @@
 Inline style for background Image
 
 style={{ backgroundImage: `url('${process.env.PUBLIC_URL}/img/bg/5.jpg')` }}
+style={{ marginBottom: '20px'}}
 =======================(Icon)
 npm install react-icons
 ========================= (External Link )

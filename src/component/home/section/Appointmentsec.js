@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Appointment extends Component {
+class Appointmentsec extends Component {
     render() {
         return (
             <>
@@ -56,4 +56,4 @@ class Appointment extends Component {
     }
 }
 
-export default Appointment;
+export default Appointmentsec;

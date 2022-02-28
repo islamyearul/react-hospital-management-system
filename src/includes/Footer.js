@@ -1,45 +1,53 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
+import { FaPhoneAlt, FaMailBulk, FaFacebookF, FaTwitter, FaLinkedin, FaInstagram, FaAngleRight } from "react-icons/fa";
+
 
 class Footer extends Component {
     render() {
         return (
             <>
-                 <footer className="bg-faded">
+       <footer className="bg-faded">
         <div className="container">
             <div className="section-content">
                 <div className="row margin-top-30">
-                    <div className="col-md-3">
+                    <div className="col-md-4">
                       <div className="footer-item footer-widget-one">
                           <img alt="" src="img/logo.png" className="footer-logo" />
                           <p>Voluptate porro esse repellat quo exercitationem debitis incidunt.</p>
 
                           <ul className="address">
-                            <li><i className="pe-7s-call"></i>Phone: 001 (407) 901-6400</li>
-                            <li><i className="pe-7s-mail"></i><a href="mailto:">Email: info@bdcoder.com</a></li>
+                            <li>{<FaPhoneAlt></FaPhoneAlt>}&nbsp; Phone: 01825 -682260</li>
+                            <li>{<FaMailBulk></FaMailBulk>} &nbsp;<a href="mailto:">Email: yearulislamonem@gmail.com</a></li>
                           </ul>
                           
                           <hr></hr>
                           <ul className="social-icon bg-theme">
-                            <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i className="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                          </ul>
+                        <li className=" hvr-rectangle-out m-1" style={{margin: "5px" }}><a href="#" target="_blank" rel="noopener noreferrer" onClick={() => this.openInNewTab('https://twitter.com')}>{<FaTwitter></FaTwitter>}</a>
+                        </li>
+                        <li className=" hvr-rectangle-out m-1" style={{margin: "5px" }}><a href="#" onClick={() => this.openInNewTab('https://linkedin.com')}>{<FaLinkedin></FaLinkedin>}</a>
+                        </li>
+                        <li className=" hvr-rectangle-out m-1" style={{margin: "5px" }}><a href="#" onClick={() => this.openInNewTab('https://facebook.com')}>{<FaFacebookF></FaFacebookF>}</a>
+                        </li>
+                        <li className=" hvr-rectangle-out m-1" style={{margin: "5px" }}><a href="#" onClick={() => this.openInNewTab('https://instagram.com')}>{<FaInstagram></FaInstagram>}</a>
+                        </li>
+                        
+                      
+                    </ul>
                         </div>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-2">
                       <div className="footer-item">
                         <div className="footer-title">
-                          <h4>Our Peges </h4>
+                          <h4>Menus </h4>
                           <div className="border-style-2"></div>
                         </div>
                         <ul className="footer-list border-deshed color-icon">
-                          <li><i className="pe-7s-angle-right"></i><a href="#">About Us</a></li>
-                          <li><i className="pe-7s-angle-right"></i><a href="#">Services</a></li>
-                          <li><i className="pe-7s-angle-right"></i><a href="#">Gallery</a></li>
-                          <li><i className="pe-7s-angle-right"></i><a href="#">Blog</a></li>
-                          <li><i className="pe-7s-angle-right"></i><a href="#">Contact</a></li>
+                          <li>{<FaAngleRight></FaAngleRight>} &nbsp;<Link to={'/appointment'}>Appintment</Link></li>
+                          <li>{<FaAngleRight></FaAngleRight>} &nbsp;<Link to={'/doctors'}>Service</Link></li>
+                          <li>{<FaAngleRight></FaAngleRight>} &nbsp;<Link to={'/portfolio'}>Portfolio</Link></li>
+                          <li>{<FaAngleRight></FaAngleRight>} &nbsp;<Link to={'/blog'}>Blog</Link></li>
+                          <li>{<FaAngleRight></FaAngleRight>} &nbsp;<Link to={'/contact'}>Contact</Link></li>
                         </ul>
                       </div>
                     </div>
@@ -87,8 +95,14 @@ class Footer extends Component {
     <section className="footer-copy-right bg-f9">
       <div className="container">
         <div className="row">
-          <div className="col-12 text-center">
-            <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
+          <div className="col-md-4 text-center">
+            <p><b>Service</b> Is Out Aim</p>
+          </div>
+          <div className="col-md-4 text-center">
+            <p><Link target="_blank" to={'/'}>Islam Diagnostic Center & Hospital Soluation</Link></p>
+          </div>
+          <div className="col-md-4 text-center">
+          <p><b>Come</b> for Serve & Leave with Satisfaction</p>
           </div>
         </div>
       </div>

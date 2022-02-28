@@ -1,7 +1,9 @@
+// import logo from './logo.svg';
 
 import Nav from './includes/Nav'
 import Footer from './includes/Footer'
 import Myroutes from './includes/Myroutes'
+import { FaHome } from "react-icons/fa";
 
 
 
@@ -17,6 +19,8 @@ function App() {
    {/* <!-- Footer Style start --> */}
     <Footer></Footer>
     {/* <!-- Footer Style End --> */}
+
+    <a href="#" class="scrollup">{<FaHome></FaHome>}</a>
 </>
   );
 }

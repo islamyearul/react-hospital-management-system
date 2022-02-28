@@ -3,7 +3,7 @@ import Slider from './section/Slider';
 import Divider from './section/Divider';
 import Welcome from './section/Welcome';
 import Service from './section/Service';
-import Appointment from './section/Appointment';
+import Appointmentsec from './section/Appointmentsec';
 import Divider2 from './section/Divider2';
 import Portfolio from './section/Portfolio';
 import Divider3 from './section/Divider3';
@@ -32,7 +32,7 @@ class Home extends Component {
                 <Service></Service>
             {/* <!-- service end --> */}
             {/* <!-- appointment start --> */}
-                <Appointment></Appointment>
+                <Appointmentsec></Appointmentsec>
             {/* <!-- appointment end --> */}
             {/* <!-- divider start --> */}
                 <Divider2></Divider2>

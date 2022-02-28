@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 class Slider extends Component {
     render() {
@@ -65,13 +66,13 @@ class Slider extends Component {
 
 {/* <!-- Left Control --> */}
 <a className="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
-<span className="fa fa-angle-left" aria-hidden="true"></span>
+<span className="" aria-hidden="true">{<FaAngleLeft></FaAngleLeft>} </span>
 <span className="sr-only">Previous</span>
 </a>
 
 {/* <!-- Right Control --> */}
 <a className="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
-<span className="fa fa-angle-right" aria-hidden="true"></span>
+<span className="" aria-hidden="true">{<FaAngleRight></FaAngleRight>}</span>
 <span className="sr-only">Next</span>
 </a>
 

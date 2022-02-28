@@ -27,27 +27,27 @@ class Welcome extends Component {
                                 <div className="" >
                                     <div className="">
                                     <h5>Cardiology</h5>
-                                    <ProgressBar bgcolor="#DDDDDD" progress='30'  height={30} /> 
+                                    <ProgressBar bgcolor="#00B092" progress='30'  height={30} /> 
                                     </div>                                   
                                 </div>
                                 <div className="margin-top-20" >
                                     <div className="">
                                     <h5>General Practice</h5>
-                                    <ProgressBar bgcolor="#DDDDDD" progress='60'  height={30} /> 
+                                    <ProgressBar bgcolor="#00B092" progress='60'  height={30} /> 
                                     </div>
                                 
                                 </div>
                                 <div className="margin-top-20" >
                                     <div className="">
                                     <h5>General surgery</h5>
-                                    <ProgressBar bgcolor="#DDDDDD" progress='89'  height={30} /> 
+                                    <ProgressBar bgcolor="#00B092" progress='89'  height={30} /> 
                                     </div>
                                    
                                 </div>
                                 <div className="margin-top-20" >
                                     <div className="">
                                     <h5>Pharmacology</h5>
-                                    <ProgressBar bgcolor="#DDDDDD" progress='60'  height={30} /> 
+                                    <ProgressBar bgcolor="#00B092" progress='60'  height={30} /> 
                                     </div>
                                     
                                 </div>

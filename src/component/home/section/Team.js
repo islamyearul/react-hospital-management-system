@@ -4,7 +4,7 @@ class Team extends Component {
     render() {
         return (
             <>
-                <section className="team-area">
+            <section className="team-area">
             <div className="container">
                 <div className="section-title">
                     <div className="row">
@@ -17,8 +17,8 @@ class Team extends Component {
                 </div>
                 <div className="section-content">
                     <div className="row">
-                        <div className="team-carousel">
-                            <div className="item">
+                        
+                            <div className="item col-md-4">
                                 <div className="team-item-2">
                                     <img src="img/team/1.png" alt="" />
                                     <div className="team-contact">
@@ -53,7 +53,7 @@ class Team extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="item">
+                            <div className="item col-md-4">
                                 <div className="team-item-2">
                                     <img src="img/team/2.png" alt="" />
                                     <div className="team-contact">
@@ -88,7 +88,7 @@ class Team extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="item">
+                            <div className="item col-md-4">
                                 <div className="team-item-2">
                                     <img src="img/team/3.png" alt="" />
                                     <div className="team-contact">
@@ -123,7 +123,7 @@ class Team extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="item">
+                            <div className="item col-md-4">
                                 <div className="team-item-2">
                                     <img src="img/team/4.png" alt="" />
                                     <div className="team-contact">
@@ -158,7 +158,7 @@ class Team extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="item">
+                            <div className="item col-md-4">
                                 <div className="team-item-2">
                                     <img src="img/team/5.png" alt="" />
                                     <div className="team-contact">
@@ -193,7 +193,7 @@ class Team extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="item">
+                            <div className="item col-md-4">
                                 <div className="team-item-2">
                                     <img src="img/team/3.png" alt="" />
                                     <div className="team-contact">
@@ -228,7 +228,7 @@ class Team extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

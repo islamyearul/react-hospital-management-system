@@ -20,7 +20,7 @@ function App() {
     <Footer></Footer>
     {/* <!-- Footer Style End --> */}
 
-    <a href="#" class="scrollup">{<FaHome></FaHome>}</a>
+    <a href="#" className="scrollup">{<FaHome></FaHome>}</a>
 </>
   );
 }

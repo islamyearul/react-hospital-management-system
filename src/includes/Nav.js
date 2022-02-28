@@ -147,7 +147,7 @@ class Nav extends Component {
                                                             <td className="amount">$1499.00</td>
                                                         </tr>
                                                         <tr>
-                                                            <td className="total-quantity" colspan="2"><strong>Total 8 Items</strong></td>
+                                                            <td className="total-quantity" colSpan="2"><strong>Total 8 Items</strong></td>
                                                             <td className="total-amount"><strong>$1997.00</strong></td>
                                                         </tr>
                                                         </tbody>

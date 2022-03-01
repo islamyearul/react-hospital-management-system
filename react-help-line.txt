@@ -2,10 +2,12 @@ Inline style for background Image
 
 style={{ backgroundImage: `url('${process.env.PUBLIC_URL}/img/bg/5.jpg')` }}
 style={{ marginBottom: '20px'}}
-import { FaPhoneAlt, FaMailBulk, FaMapMarkerAlt, FaMedkit, FaHeartbeat, FaMedrt, FaHandHoldingMedical } from "react-icons/fa";
+import { FaPhoneAlt, FaMailBulk, FaMapMarkerAlt, FaMedkit, FaHeartbeat, FaMedrt, FaHandHoldingMedical, FaClock } from "react-icons/fa";
 
 =======================(Icon)
 npm install react-icons
+npm install axios
+import axios from "axios";
 ========================= (External Link )
 //More Secure Solution. For JS only.
 const openInNewTab = (url) => {

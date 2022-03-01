@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CountUp from 'react-countup';
+import Style from './Style.css'
 import { FaMedkit, FaHeartbeat, FaMedrt, FaHandHoldingMedical } from "react-icons/fa";
+
 class Counter extends Component {
     render() {
         return (
@@ -13,14 +15,15 @@ class Counter extends Component {
                         <div className="counter-col text-center">
                         <h2 className='text-white' ><span >{<FaHeartbeat></FaHeartbeat>}</span></h2>
                             <div className="count">
-                                <div className="start-count">
-                                <CountUp start={0} end={25} delay={0}>
+                                <div className="home-count">
+                               <CountUp start={0} end={25} delay={0} >
                                 {({ countUpRef }) => (
                                     <div>
                                     <span ref={countUpRef} />
                                     </div>
                                 )}
                                 </CountUp>
+                                
                                 </div>
                                 <h4>Heart Transplants</h4>
                                
@@ -31,8 +34,8 @@ class Counter extends Component {
                         <div className="counter-col text-center">
                         <h2 className='text-white' ><span >{<FaMedrt></FaMedrt>}</span></h2>
                             <div className="count">
-                                <div className="start-count">
-                                <CountUp start={0} end={100} delay={0}>
+                                <div className="home-count">
+                                <CountUp start={0} end={258} delay={0} >
                                 {({ countUpRef }) => (
                                     <div>
                                     <span ref={countUpRef} />
@@ -48,8 +51,8 @@ class Counter extends Component {
                         <div className="counter-col text-center">
                         <h2 className='text-white' ><span >{<FaHandHoldingMedical></FaHandHoldingMedical>}</span></h2>
                             <div className="count">
-                                <div className="start-count"> 
-                                <CountUp start={0} end={5278} delay={0}>
+                                <div className="home-count"> 
+                                <CountUp start={0} end={5879} delay={0}>
                                 {({ countUpRef }) => (
                                     <div>
                                     <span ref={countUpRef} />
@@ -65,8 +68,8 @@ class Counter extends Component {
                         <div className="counter-col text-center">
                         <h2 className='text-white' ><span >{<FaMedkit></FaMedkit>}</span></h2>
                             <div className="count">
-                                <div className="start-count border-none"> 
-                                <CountUp start={0} end={119} delay={0}>
+                                <div className="home-count border-none"> 
+                                <CountUp start={0} end={100} delay={0} >
                                 {({ countUpRef }) => (
                                     <div>
                                     <span ref={countUpRef} />

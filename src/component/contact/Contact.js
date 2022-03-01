@@ -1,6 +1,60 @@
 import React, { Component } from 'react';
+import axios from "axios";
+import { FaPhoneAlt, FaMailBulk, FaMapMarkerAlt, FaClock  } from "react-icons/fa";
 
 class Contact extends Component {
+    constructor(props) {
+        super(props)
+          this.state = {
+              name:'',
+              email:'',
+              subject:'',
+              message:'',
+              companyAddress:[],
+              errorMessage: [],
+                  }
+          }
+     OnchangeHandler = (event) => {
+        //var newname = event.target.value;
+        var inputName = event.target.name;
+        var inputvalue = event.target.value;
+        this.setState({[inputName]: inputvalue})
+
+        if(inputName === 'name'){
+            var namepattern = /^([a-zA-Z]){2,30}$/;
+            if(!namepattern.test(inputvalue)){
+                this.setState({name: "Name Is Not Valid"})
+            }
+        }else if(inputName === 'email'){
+            var Emailpattern = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
+            if(!Emailpattern.test(inputvalue)){
+                this.setState({email: "Email Is Not Valid"})
+            }
+        
+        }else if(inputName === 'subject'){
+            var subjpattern =  /^([a-zA-Z]){2,50}$/;
+            if(!subjpattern.test(inputvalue)){
+                this.setState({subject: "subject Is Not Valid"})
+            }      
+        }else if(inputName === 'message'){
+            var messagejpattern =  /^([a-zA-Z0-9]){2,200}$/;
+            if(!subjpattern.test(inputvalue)){
+                this.setState({message: "message Is Not Valid"})
+            }
+        }
+    };
+          componentDidMount(){
+            //get request
+            axios.get('http://localhost/react/react-hospital-management-system/api/companyAddress.php').then(res => 
+            {    
+            this.setState({companyAddress: res.data});
+             })
+               .catch(error => {
+                this.setState({ errorMessage: error.message });
+                console.error('There was an error!', error);
+            });
+            
+            }
     render() {
         return (
             <>
@@ -28,7 +82,7 @@ class Contact extends Component {
                             <h2>Get in Touch</h2>
                             <div className="small-line-border-2"></div>
                         </div>
-                        <form id="ajax-contact" method="post" action="https://heatmaponline.com/html/medcative/php/contact.php">
+                        <form id="ajax-contact" method="post" action="">
                             <div className="col-md-6">
                                 <input type="text" name="name" id="name" className="form-control" placeholder="Your Name" required />
                             </div>
@@ -50,16 +104,16 @@ class Contact extends Component {
                     <div className="col-md-5 contact-info margin-top-60">
                         <div className="service-item style-1 bg-f8">
                             <div className="service-icon">
-                                <i className="pe-7s-map"></i>
+                            {<FaMapMarkerAlt></FaMapMarkerAlt>}
                             </div>
                             <div className="content">
                                 <h5><a href="#" className="color-333">Contact Info</a></h5>
-                                <p>5B Streat, City 50987 New Town US, <br></br> Khulna, BD</p>
+                                <p>{this.state.companyAddress.map(company => company.address )}<br></br></p>
                             </div>
                         </div>
                         <div className="service-item style-1 bg-f8">
                             <div className="">
-                                <i className="pe-7s-clock"></i>
+                            {<FaClock ></FaClock >}
                             </div>
                             <div className="content">
                                 <h5><a href="#" className="color-333">Business Hours</a></h5>
@@ -68,11 +122,12 @@ class Contact extends Component {
                         </div>
                         <div className="service-item style-1 bg-f8">
                             <div className="">
-                                <i className="pe-7s-mail-open"></i>
+                            {<FaMailBulk></FaMailBulk>}
+                            
                             </div>
                             <div className="content">
                                 <h5><a href="#" className="color-333">Email</a></h5>
-                                <p>info@bdcoder.com <br></br> set-info@bdcoder.com </p>
+                                <p>{this.state.companyAddress.map(company => company.email )}<br></br> {this.state.companyAddress.map(company => company.email2 )} </p>
                             </div>
                         </div>
                     </div>
@@ -80,7 +135,16 @@ class Contact extends Component {
             </div>
         </div>
         <div id="map">
-            <h1>Here is Google MAp</h1>
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.501660642948!2d90.41378741498094!3d23.72948378459968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b859989fd797%3A0xf234fc70cefb96ab!2sIslam%20Chamber%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1646117631841!5m2!1sen!2sbd"
+             width="100%" 
+             height="450" 
+             frameBorder="0"
+             style={{ border: 0 }}
+             allowfullscreen="" 
+             aria-hidden="false"
+             tabIndex="0"
+             ></iframe>
         </div>
     </section>
 
@@ -92,33 +156,47 @@ class Contact extends Component {
                     <div className="col-sm-12 col-md-4">
                         <div className="service-item style-1 text-white border-right">
                             <div className="service-icon">
-                                <i className="pe-7s-call"></i>
+                                {<FaPhoneAlt></FaPhoneAlt>}
                             </div>
                             <div className="content">
                                 <h5><a href="#">Give us a Call</a></h5>
-                                <p>+970-438-3258</p>
+                                <p>{
+                                    this.state.companyAddress.map(company =>
+                                        company.cell
+                                        )
+                                }</p>
                             </div>
                         </div>
                     </div>
                     <div className="col-sm-12 col-md-4">
                         <div className="service-item style-1 text-white border-right">
                             <div className="">
-                                <i className="pe-7s-mail-open"></i>
+                                {<FaMailBulk></FaMailBulk>}
                             </div>
                             <div className="content">
                                 <h5><a href="#">Send us a Message</a></h5>
-                                <p>Your_malil@gmail.com</p>
+                                <p>{
+                                    this.state.companyAddress.map(company =>
+                                        company.email
+                                        )
+                                }</p>
                             </div>
                         </div>
                     </div>
                     <div className="col-sm-12 col-md-4">
                         <div className="service-item style-1 text-white">
                             <div className="">
-                                <i className="pe-7s-map-marker"></i>
+                                {<FaMapMarkerAlt></FaMapMarkerAlt>}
                             </div>
                             <div className="content">
                                 <h5><a href="#">Visit our Location</a></h5>
-                                <p>12 New york, USA </p>
+                                <p>
+                                    {
+                                    this.state.companyAddress.map(company =>
+                                        company.address
+                                        )
+                                }
+                                </p>
                             </div>
                         </div>
                     </div>

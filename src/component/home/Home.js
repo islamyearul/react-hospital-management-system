@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Slider from './section/Slider';
 import Divider from './section/Divider';
 import Welcome from './section/Welcome';
-import Service from './section/Service';
+import ServiceContent from './section/ServiceContent';
 import Appointmentsec from './section/Appointmentsec';
 import Divider2 from './section/Divider2';
 import Portfolio from './section/Portfolio';
@@ -29,7 +29,7 @@ class Home extends Component {
                 <Welcome></Welcome>
             {/* <!-- welcome end --> */}
             {/* <!-- service start --> */}
-                <Service></Service>
+                <ServiceContent></ServiceContent>
             {/* <!-- service end --> */}
             {/* <!-- appointment start --> */}
                 <Appointmentsec></Appointmentsec>

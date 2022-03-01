@@ -63,25 +63,8 @@ class Nav extends Component {
                                    
                                 </li>
                                 <li className="dropdown">
-                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Depertment">Depertment <i className="fa fa-angle-down" aria-hidden="true"></i></span></a>
-                                    <ul className="dropdown-menu">
-                                        <li><a href="depertment-1.html">Cardilogists Depertment</a>
-                                        </li>
-                                        <li><a href="depertment-2.html">Orthopaedics Depertment</a>
-                                        </li>
-                                        <li><a href="depertment-3.html">Gastroenlogy Depertment</a>
-                                        </li>
-                                        <li><a href="depertment-4.html">Neuroscien Depertment</a>
-                                        </li>
-                                        <li><a href="depertment-5.html">Spine Depertment</a>
-                                        </li>
-                                        <li><a href="depertment-6.html">Cancer Depertment</a>
-                                        </li>
-                                        <li><a href="depertment-3.html">Colorectal Depertment</a>
-                                        </li>
-                                        <li><a href="depertment-4.html">Bariatric Depertment</a>
-                                        </li>
-                                    </ul>
+                                    <Link to={'/ourservice'} className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Depertment">Services </span></Link>
+                                    
                                 </li>
                                 <li className="dropdown">
                                     <Link to='/doctors' className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span data-hover="Doctors">Doctors</span></Link>

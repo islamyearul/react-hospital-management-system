@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import {Link} from 'react-router-dom'
 
 class Slider extends Component {
     render() {
@@ -26,8 +27,8 @@ class Slider extends Component {
     <div className="slide-text slide_style_left">
         <h1 data-animation="animated fadeInRight">The <span className="color-defult"> Medicative </span>Hospital</h1>
         <p data-animation="animated fadeInLeft">Our team of over 7000 doctors join me in giving you the best <br></br>  of modern healthcare to ensure you stay healthy, always.</p>
-        <a href="#" target="_blank" className="btn btn-default" data-animation="animated fadeInLeft">Read more</a>
-        <a href="#" target="_blank"  className="btn btn-primary" data-animation="animated fadeInRight">Book Now</a>
+        <Link to={'/ourservice'} target="_blank" className="btn btn-default" data-animation="animated fadeInLeft">Read more</Link>
+        <Link to={'/appointment'} target="_blank"  className="btn btn-primary" data-animation="animated fadeInRight">Take A Appointment</Link>
     </div>
 </div>
 {/* <!-- End of Slide --> */}
@@ -41,8 +42,8 @@ class Slider extends Component {
     <div className="slide-text slide_style_center">
         <h1 data-animation="animated bounceInDown"> Treat<span className="color-defult"> heart</span> disease.</h1>
         <p data-animation="animated lightSpeedIn">consectetur adipisicing elit. Eligendi vel ipsam deleniti dignissimos <br></br> corporis consequatur possimus eaque voluptates.</p>
-        <a href="#" target="_blank" className="btn btn-default" data-animation="animated fadeInUp">Read More</a>
-        <a href="#" target="_blank"  className="btn btn-primary" data-animation="animated fadeInDown">Donate Now</a>
+        <Link to={'/service'} target="_blank" className="btn btn-default" data-animation="animated fadeInUp">Read More</Link>
+        <Link to={'/ourservice'} target="_blank"  className="btn btn-primary" data-animation="animated fadeInRight">Take A Appointment</Link>
     </div>
 </div>
 {/* <!-- End of Slide --> */}
@@ -56,8 +57,8 @@ class Slider extends Component {
     <div className="slide-text slide_style_right">
         <h1 data-animation="animated fadeInLeft">Life Wellness<span className="color-defult"> Programs</span></h1>
         <p data-animation="animated fadeInRight">Stay in touch and in shape with periodic tips from our <br></br>  in-house  experts on wellness, fitness and nutrition.</p>
-        <a href="#" target="_blank" className="btn btn-default" data-animation="animated fadeInLeft">Read More</a>
-        <a href="#" target="_blank" className="btn btn-primary" data-animation="animated fadeInRight">Donate Now</a>
+        <Link to={'/ourservice'} target="_blank" className="btn btn-default" data-animation="animated fadeInLeft">Read More</Link>
+        <Link to={'/appointment'} target="_blank"  className="btn btn-primary" data-animation="animated fadeInRight">Take A Appointment</Link>
     </div>
 </div>
 {/* <!-- End of Slide --> */}

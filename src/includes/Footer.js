@@ -96,7 +96,7 @@ class Footer extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-4 text-center">
-            <p><b>Service</b> Is Out Aim</p>
+            <p><b>Service</b> Is Our Aim</p>
           </div>
           <div className="col-md-4 text-center">
             <p><Link target="_blank" to={'/'}>Islam Diagnostic Center & Hospital Soluation</Link></p>

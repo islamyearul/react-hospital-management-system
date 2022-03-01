@@ -26,7 +26,7 @@ class Divider extends Component {
                         <h5><Link to={'/service'}>Department & Service</Link></h5>
                         <div className="line-border-center bg-gray margin-bottom-20"></div>
                         <p>Find maps and more for all locations.</p>
-                        <Link to={'/service'}><button className="btn btn-theme btn-sm">Get Directions {<FaAngleRight></FaAngleRight>}</button></Link>
+                        <Link to={'/ourservice'}><button className="btn btn-theme btn-sm">Get Directions {<FaAngleRight></FaAngleRight>}</button></Link>
                     </div>
                 </div>
                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 center-block">

@@ -1,9 +1,11 @@
 
 import React, { Component } from 'react';
-import Appointmentsec from '../home/section/Appointmentsec';
-
+import Appointmentsec from '../home/section/Appointmentsec'
+import CountdownTimer from './commingsoon/CountdownTimer';
+import {Link} from 'react-router-dom'
 
 class Appointment extends Component {
+    
     render() {
         return (
             <>
@@ -18,23 +20,13 @@ class Appointment extends Component {
                     <i className="flaticon-edit-1"></i>
                     {/* <!-- Count down area --> */}
                     <div className="timer">
-                        <div className="days-wrapper">
-                            <span className="days"></span> <br></br> days
-                        </div>
-                        <div className="hours-wrapper">
-                            <span className="hours"></span> <br></br> hours
-                        </div>
-                        <div className="minutes-wrapper">
-                            <span className="minutes"></span> <br></br> minutes
-                        </div>
-                        <div className="seconds-wrapper">
-                            <span className="seconds"></span> <br></br> seconds
-                        </div>
+                        <CountdownTimer></CountdownTimer>
+                        
                     </div>
                     <div className="content">
                         <h2>We're coming soon</h2>
                         <p> We are working very hard on the new version of our site. <br></br> It will bring a lot of new features. Stay tuned!</p>
-                        <a href="index-2.html"><button type="submit" className="btn btn-theme hvr-bounce-to-top" data-text="Send Message"><span>Back To Home Page</span></button></a>
+                        <Link to={'/'}><button type="submit" className="btn btn-theme hvr-bounce-to-top" data-text="Send Message"><span>Back To Home Page</span></button></Link>
                     </div>
                 </div>
             </div>

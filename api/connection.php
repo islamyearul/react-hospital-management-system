@@ -5,6 +5,9 @@ header("Access-Control-Max-Age: 1000");
 header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE");
 header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding");
 header("Content-Type: application/json; charset=UTF-8");
+
+
+
 $conn = new mysqli("localhost", "root", "", "laravel_hospital-management-system-project");
 
 

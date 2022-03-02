@@ -1,6 +1,29 @@
 import React, { Component } from 'react';
+import axios from "axios";
+import { FaMedrt,  } from "react-icons/fa";
 
 class ServiceContent extends Component {
+    constructor(props) {
+        super(props)
+          this.state = {            
+              Service:[],
+              errorMessage: [],
+                  }
+          }
+          Base_url_of_database = 'http://localhost/react/react-hospital-management-system/api/';
+          componentDidMount(){
+            //get request
+            axios.get(this.Base_url_of_database + 'service.php').then(res => 
+            {    
+            this.setState({Service: res.data});
+             })
+               .catch(error => {
+                this.setState({ errorMessage: error.message });
+                console.error('There was an error!', error);
+            });
+            
+    }
+
     render() {
         return (
             <div>
@@ -17,63 +40,23 @@ class ServiceContent extends Component {
                 </div>
                 <div className="section-content">
                     <div className="row">
+                    {this.state.Service.map(Service => 
                         <div className="col-xs-12 col-sm-6 col-md-4">
                             <div className="service-item text-center style-3">
-                                <span className="flaticon-heart-1"></span>
-                                <h4><a href="#">Heart Transplants</a></h4>
+                                <span className="">{<FaMedrt></FaMedrt>}</span>
+                                <h4><a href="#">{Service.name}</a></h4>
                                 <div className="border-center"></div>
-                                <p>  Provide direct support to an individual, family or community by paying medical expenses for service.</p>
-                                <button type="submit" className="btn btn-theme margin-top-20" data-text="Send Message">Read More</button>
+                                <p>{Service.message}</p>
+                                <button type="button" className="btn btn-theme margin-top-20" data-text="Send Message">Read More</button>
                             </div>
                         </div>
-                        <div className="col-xs-12 col-sm-6 col-md-4">
-                            <div className="service-item text-center style-3">
-                                <span className="flaticon-broken-bone"></span>
-                                <h4><a href="#">Orthopaedics</a></h4>
-                                <div className="border-center"></div>
-                                <p>  Provide direct support to an individual, family or community by paying medical expenses for service.</p>
-                                <button type="submit" className="btn btn-theme margin-top-20" data-text="Send Message">Read More</button>
-                            </div>
-                        </div>
-                        <div className="col-xs-12 col-sm-6 col-md-4">
-                            <div className="service-item text-center style-3">
-                                <span className="flaticon-stomach"></span>
-                                <h4><a href="#">Gastroenterology</a></h4>
-                                <div className="border-center"></div>
-                                <p>  Provide direct support to an individual, family or community by paying medical expenses for service.</p>
-                                <button type="submit" className="btn btn-theme margin-top-20" data-text="Send Message">Read More</button>
-                            </div>
-                        </div>
-                        <div className="col-xs-12 col-sm-6 col-md-4">
-                            <div className="service-item text-center style-3">
-                                <span className="flaticon-brain-2"></span>
-                                <h4><a href="#">Neurosciences</a></h4>
-                                <div className="border-center"></div>
-                                <p>  Provide direct support to an individual, family or community by paying medical expenses for service.</p>
-                                <button type="submit" className="btn btn-theme margin-top-20" data-text="Send Message">Read More</button>
-                            </div>
-                        </div>
-                        <div className="col-xs-12 col-sm-6 col-md-4">
-                            <div className="service-item text-center style-3">
-                                <span className="flaticon-spine-bone"></span>
-                                <h4><a href="#">Spine Care</a></h4>
-                                <div className="border-center"></div>
-                                <p>  Provide direct support to an individual, family or community by paying medical expenses for service.</p>
-                                <button type="submit" className="btn btn-theme margin-top-20" data-text="Send Message">Read More</button>
-                            </div>
-                        </div>
-                        <div className="col-xs-12 col-sm-6 col-md-4">
-                            <div className="service-item text-center style-3">
-                                <span className="flaticon-virus"></span>
-                                <h4><a href="#">Cancer Care</a></h4>
-                                <div className="border-center"></div>
-                                <p>  Provide direct support to an individual, family or community by paying medical expenses for service.</p>
-                                <button type="submit" className="btn btn-theme margin-top-20" data-text="Send Message">Read More</button>
-                            </div>
-                        </div>
+                      )}
                     </div>
                 </div>
             </div>
+            </section>
+            <section>
+
             </section>
             </div>
         );

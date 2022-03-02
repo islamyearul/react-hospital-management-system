@@ -1,1 +1,0 @@
-http://localhost/react/react-hospital-management-system/api/

@@ -32,7 +32,7 @@ class Home extends Component {
                 <ServiceContent></ServiceContent>
             {/* <!-- service end --> */}
             {/* <!-- appointment start --> */}
-                <Appointmentsec></Appointmentsec>
+                {/* <Appointmentsec></Appointmentsec> */}
             {/* <!-- appointment end --> */}
             {/* <!-- divider start --> */}
                 <Divider2></Divider2>

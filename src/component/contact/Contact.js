@@ -13,10 +13,13 @@ class Contact extends Component {
               email:'',
               subject:'',
               message:'',
+              emailValidationError:'',
               companyAddress:[],
               errorMessage: [],
                   }
-          }
+                  this.handleSubmit = this.handleSubmit.bind(this);
+          } //end of constructor
+
      OnchangeHandler = (event) => {
         //var newname = event.target.value;
         var inputName = event.target.name;
@@ -26,8 +29,9 @@ class Contact extends Component {
         if(inputName === 'email'){
             var Emailpattern = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
             if(!Emailpattern.test(inputvalue)){
-                this.setState({email: "Email Is Not Valid"})
+                this.setState({emailValidationError: "Email Is Not Valid"})
             }
+           
         
         }
     };
@@ -43,55 +47,36 @@ class Contact extends Component {
                 console.error('There was an error!', error);
             });
             
-    }
-    // handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     //alert(this.state)
-    
-    //    //console.log( this.state);
-    //     // const user = {
-    //     //   name: this.state.name,
-    //     //   email: this.state.email,
-    //     //   subject: this.state.subject,
-    //     //   message: this.state.message,
-    //     // };
-    
-    //     axios.post('http://localhost/react/react-hospital-management-system/api/addGetInTouch', { 
-    //         name: this.state.name,
-    //         email: this.state.email,
-    //         subject: this.state.subject,
-    //         message: this.state.message,
-    //      })
-    //       .then(res => {
-    //         console.log(res);
-    //         //console.log(res.data);
-    //       })
-    //      .catch(error => {
-    //             this.setState({ errorMessage: error.message });
-    //             console.error('There was an error!', error);
-    //         });
-    // }
-    save() {
-        var context = this;
-    
-        $.ajax({
-          url: "http://localhost/react/react-hospital-management-system/api/addGetInTouch",
-          method: "POST",
-          data: {
-            
-            name: context.state.name,
-            email: context.state.email,
-            subject: context.state.subject,
-            message: context.state.message
-          },
-          success: function(response) {
-            alert("Successfully saved record!");
-          },
-          error: function(response) {
-            alert("Error in saving record!");
-          }
+    } // End Of Digmount
+
+    handleSubmit(event) {
+        event.preventDefault();
+     
+        let formData = new FormData();
+        formData.append('name', this.state.name)
+        formData.append('email', this.state.email)
+        formData.append('subject', this.state.subject)
+        formData.append('message', this.state.message)
+        
+        axios({
+            method: 'post',
+            url:  this.Base_url_of_database + 'addGetInTouch.php',
+            data: formData,
+            config: { headers: {'Content-Type': 'multipart/form-data' }}
+        })
+        .then(function (response) {
+            //handle success
+            //console.log(response)
+            alert('New Contact Successfully Added.');  
+        })
+        .catch(function (response) {
+            //handle error
+            alert('Something Is Wrong');  
+            //console.log(response)
         });
-      }
+     
+      }//end of submit
+
     render() {
         return (
             <>
@@ -119,29 +104,29 @@ class Contact extends Component {
                             <h2>Get in Touch</h2>
                             <div className="small-line-border-2"></div>
                         </div>
-                        <form id="ajax-contact" method="post" action="">
+                        <form id="ajax-contact" method="post" action="" onSubmit={this.handleSubmit}>
                             <div className="col-md-6">
                                 <input  type="text" name="name" id="name" className="form-control" placeholder="Your Name" onChange={this.OnchangeHandler} />
-                                <span className='text-danger'>{this.state.name}</span>
+                                <span className='text-danger'></span>
                             </div>
                             <div className="col-md-6">
                                 <input type="email" name="email" id="email" className="form-control" placeholder="Your Email" onChange={this.OnchangeHandler} required />
-                                <span className='text-danger'>{this.state.email}</span>
+                                <span className='text-danger'>{this.state.emailValidationError}</span>
                             </div>
                             <div className="col-md-12">
                                 <input type="text" name="subject" className="form-control" placeholder="Subject" id="subject" onChange={this.OnchangeHandler} required /> 
-                                <span className='text-danger'>{this.state.subject}</span>
+                                <span className='text-danger'></span>
                             </div>
                             <div className="col-md-12">
                                 <div className="contact-textarea">
                                     <textarea className="form-control" rows="6" placeholder="Wright Message" id="message" name="message" onChange={this.OnchangeHandler} required></textarea>
-                                    <span className='text-danger'>{this.state.message}</span>  
+                                    <span className='text-danger'></span>  
                                 </div>
                             </div>
                             <div className="col-md-12">
-                            <button className="btn btn-theme" type="button" onClick={this.save.bind(this)} value="Submit Form">Send Message</button>
+                            <button className="btn btn-theme" type="submit" value="Submit Form">Send Message</button>
                             </div>
-                            <div id="form-messages"></div>
+                            {/* <div id="form-messages"></div> */}
                         </form>
                     </div>
                     <div className="col-md-5 contact-info margin-top-60">

@@ -9,13 +9,27 @@ import { useContext } from 'react';
 class Appointmentsec extends Component {
     constructor(props) {
         super(props)
-          this.state = {            
+          this.state = {  
+            app_p_name: '',          
+            app_p_phone: '',          
+            app_doc_id: '',          
+            app_date: '',          
+            app_message: '',          
+            app_status: 'Active',  
+
               DoctorsSchedure:[],
+              DoctorsList:[],
               errorMessage: [],
                   }
+                   this.handleSubmit = this.handleSubmit.bind(this);
           }
           
-          
+              OnchangeHandler = (event) => {
+        //var newname = event.target.value;
+        var inputName = event.target.name;
+        var inputvalue = event.target.value;
+        this.setState({[inputName]: inputvalue})
+         };
           Base_url_of_database = 'http://localhost/react/react-hospital-management-system/api/';
           componentDidMount(){
             //get request
@@ -27,11 +41,31 @@ class Appointmentsec extends Component {
                 this.setState({ errorMessage: error.message });
                 console.error('There was an error!', error);
             });
+            axios.get('http://127.0.0.1:8000/api/get-doctors').then(res => 
+            {    
+             this.setState({DoctorsList: res.data});
+            //console.log(res);
+             })
+               .catch(error => {
+                this.setState({ errorMessage: error.message });
+                console.error('There was an error!', error);
+            });
             
-    }
+             }
 
+            handleSubmit(event) {
+                event.preventDefault();
+             
+    
+           axios.post('http://127.0.0.1:8000/api/add-appointment', this.state).then(res => 
+           {    
+                //console.log(res.data);
+                alert(res.data.message)
+            }).catch(error => {
+                     console.error('There was an error!', error);
+                 });
 
-
+            }
     render() {
         return (
             <>
@@ -80,33 +114,38 @@ class Appointmentsec extends Component {
                                 <h2>Make An <span className="color-defult">Appointment</span></h2>
                                 <div className="border-style-2 margin-bottom-30"></div>
                                 <p className="margin-bottom-30">Consectetur adipisicing elit. Id dignissimos atque debitis esse possimus, <br></br> fuga tenetur rem et. Vitae, repudiandae.</p>
-                                <form method="post" action="#">
+                                <form method="post" action="" onSubmit={this.handleSubmit}>
                                     <div className="row">
                                         <div className="col-md-6">
-                                            <input type="text" name="name" id="fname" className="form-control" placeholder="First Name" required /> 
+                                            <input type="text" name="app_p_name" id="fname" className="form-control" placeholder="Patient Name" onChange={this.OnchangeHandler}  required /> 
                                         </div>
                                         <div className="col-md-6">
-                                            <input type="text" name="name" id="lname" className="form-control" placeholder="Last Name" required />
+                                            <input type="number" name="app_p_phone" id="fname" className="form-control" onChange={this.OnchangeHandler}  placeholder="Patient Phone" required /> 
                                         </div>
                                         <div className="col-md-6">
-                                            <input type="text" name="subject" className="form-control" placeholder="Input Subject" id="subject" required />
+                                            <select name="app_doc_id" className="form-control" onChange={this.OnchangeHandler} >
+                                                    <option selected disabled >---Select Doctor---</option>
+                                                  {this.state.DoctorsSchedure.map(docs => 
+                                                    <option value={docs.id}>{docs.doc_name}</option>
+                                                    )}
+                                            </select>
                                         </div>
                                         <div className="col-md-6">
-                                            <input type="text" name="Reservation" className="form-control" placeholder="Input Date" id="Reservation" required />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <input type="email" name="email" className="form-control" placeholder="Your Email Here" id="email" required />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <input type="text" name="phone" className="form-control" placeholder="Your Phone" id="phone" required />
+                                            <input type="date" name="app_date" className="form-control" placeholder="Input Subject" id="subject" onChange={this.OnchangeHandler}  required />
                                         </div>
                                         <div className="col-md-12">
                                             <div className="contact-textarea">
-                                                <textarea className="form-control" rows="6" placeholder="Wright Message" id="message" name="message" required></textarea>
-                                                <button className="btn btn-theme" type="submit" value="Submit Form">Send Message</button>
+                                                <textarea className="form-control" rows="6" placeholder="Wright Message" id="message" name="app_message" onChange={this.OnchangeHandler}  required></textarea>
+       
                                             </div>
                                         </div>
-                                        <div id="form-messages"></div>
+                                        {/* <span className='text-danger'>{this.state.app_p_name}</span> */}
+                                        {/* <div class=" col-md-6 form-control">
+
+                                                <input name="app_status" onChange={this.OnchangeHandler}  type="radio" value="active" /> &nbsp; Active &nbsp;
+                                                <input name="app_status" onChange={this.OnchangeHandler}  type="radio" value="inactive" /> &nbsp; Inactive
+                                        </div> */}
+                                        <button className="btn btn-theme" type="submit" value="Submit Form">Add Appointment</button>
                                     </div>
                                 </form>
                             </div>
